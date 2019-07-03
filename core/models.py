@@ -9,8 +9,8 @@ class PontoTuristico(models.Model):
 	descricao = models.TextField()
 	aprovado = models.BooleanField(default=False)
 	atracoes = models.ManyToManyField(Atracao)
-	comentario = models.ManyToManyField(Comentario)
-	avaliacoe = models.ManyToManyField(Avaliacao)
+	comentario = models.ManyToManyField(Comentario,null=True, blank=True)
+	avaliacoe = models.ManyToManyField(Avaliacao,null=True, blank=True)
 	endereco = models.ForeignKey(Endereco,on_delete=models.CASCADE,null=True, blank=True)
 	foto = models.ImageField(upload_to='PontoTuristico',null=True, blank=True)
 
